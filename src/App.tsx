@@ -19,13 +19,12 @@ function App() {
         formData.append('image', file);
 
 
-        const response = await fetch('http://127.0.0.1:5000/image', {
+        const response = await fetch('https://backend-838738652641.us-central1.run.app/image', {
                     method:'POST',
                     body: formData
         })
         const resData = await response.json()
-        setResult(resData[0])
-
+        setResult(resData.emotion)
     }
  return <div className={"mt-[100px]"}>
      <div className={"w-1/2 bg-gray-200 mx-auto text-center p-4 flex flex-col gap-5 justify-center items-center overflow-hidden"}>
